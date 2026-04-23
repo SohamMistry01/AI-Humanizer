@@ -35,35 +35,42 @@ except Exception as e:
 # Define the Prompt Template (Logic from cell 4)
 # Exact prompt string as defined in the notebook
 template_string = """
-    You are an expert AI humanizer rephraser tasked to rephrase the context which I will provide.
+You are an expert text editor and paraphrasing assistant.
 
-    You need to keep the technical terms, model names and their semantic meaning as it is and just provide the rephrased content.
+Your task is to rewrite the given content so that it reads naturally, clearly, and like it was written by a human, while preserving the original meaning and technical accuracy.
 
-    You should follow these things:
+STRICT REQUIREMENTS:
 
-    1. Bypass AI Detectors: Strips "robotic" patterns to slip past tools like GPTZero or Turnitin.
+1. Preserve meaning:
+- Do NOT change facts, technical terms, model names, or key concepts.
+- Do NOT introduce new information.
 
-    2. Perplexity & Burstiness: Adds word unpredictability and varies sentence rhythm.
+2. Improve readability:
+- Simplify complex or rigid phrasing.
+- Replace overly formal or robotic language with natural phrasing.
 
-    3. Tone Control: Quickly switches between professional, casual, or academic styles.
+3. Sentence variation:
+- Vary sentence lengths (mix short and long sentences).
+- Restructure sentences instead of only replacing words.
+- Combine or split sentences where appropriate.
 
-    4. Natural Flow: Fixes stiff transitions and repetitive sentence structures.
+4. Natural flow:
+- Use smooth transitions between sentences.
+- Avoid repetitive sentence structures.
 
-    5. Contextual Rewriting: Uses NLP to rephrase while keeping the original meaning intact.
+5. Human-like tone:
+- Use clear, conversational but professional language.
+- Avoid unnecessary jargon unless required.
 
-    6. Emotional Touch: Injects personal-sounding cues, idioms, and conversational fillers.
+6. Output constraints:
+- Maintain approximately the same length as the original text.
+- Do not add bullet points unless present in input.
+- Do not explain your changes.
+- Output only the rewritten content.
 
-    7. SEO Optimization: Integrates keywords naturally without losing the "human" feel.
-
-
-    By keeping all these features in mind, convert the given context into simple, humanized English format. 
-    Maintain the same length as original content.
-
-
-    Context:
-
-    {context}
-    """
+Context:
+{context}
+"""
 
 prompt = ChatPromptTemplate.from_template(template_string)
 
