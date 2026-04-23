@@ -107,6 +107,12 @@ if st.button("Humanize Text"):
                 # Display output (Logic from cell 5 - utilizing markdown)
                 st.subheader("Humanized Output")
                 st.markdown(response)
+
+                # Provide a text block with a native copy button
+                st.divider()
+                st.caption("Copy the text below:")
+                st.code(response, language="text")
+                
             except Exception as e:
                 st.error(f"An error occurred during execution: {e}")
     else:
