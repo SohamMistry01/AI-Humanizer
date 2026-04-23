@@ -27,7 +27,7 @@ if not os.environ.get("GROQ_API_KEY"):
 
 # Initialize LLM (Logic from cell 1)
 try:
-    llm = ChatGroq(model="llama-3.3-70b-versatile")
+    llm = ChatGroq(model="openai/gpt-oss-120b")
 except Exception as e:
     st.error(f"Error initializing LLM: {e}")
     st.stop()
