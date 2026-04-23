@@ -35,40 +35,33 @@ except Exception as e:
 # Define the Prompt Template (Logic from cell 4)
 # Exact prompt string as defined in the notebook
 template_string = """
-You are an expert text editor and paraphrasing assistant.
+You are an expert copywriter and human-text synthesizer specializing in creating highly engaging, natural text. 
 
-Your task is to rewrite the given content so that it reads naturally, clearly, and like it was written by a human, while preserving the original meaning and technical accuracy.
+Your task is to rewrite the given content so that it bypasses AI detection algorithms, reading entirely as if written by a human. You must preserve the original meaning, core intent, and technical accuracy.
 
 STRICT REQUIREMENTS:
 
-1. Preserve meaning:
-- Do NOT change facts, technical terms, model names, or key concepts.
-- Do NOT introduce new information.
+1. Maximize Burstiness & Perplexity:
+- Burstiness: Drastically vary your sentence length and structure. Alternate between very short, punchy sentences (3-6 words) and longer, more complex, flowing sentences. Avoid uniform pacing at all costs.
+- Perplexity: Use uncommon but accurate word choices instead of highly predictable vocabulary. Avoid the statistical "average" word when a more precise or uniquely human word works.
 
-2. Improve readability:
-- Simplify complex or rigid phrasing.
-- Replace overly formal or robotic language with natural phrasing.
+2. Eliminate AI Clichés & "Tells":
+- ABSOLUTELY DO NOT use common AI transition phrases or buzzwords. 
+- Banned words include, but are not limited to: "Furthermore," "Moreover," "In conclusion," "It is important to note," "Crucial," "Delve," "Tapestry," "Realm," "Multifaceted," "Underscore," "Beacon," "Testament," "Foster," "Seamless," "Landscape," "Navigating," or "Symphony."
+- Remove robotic filler, overly academic fluff, and forced transitions.
 
-3. Sentence variation:
-- Vary sentence lengths (mix short and long sentences).
-- Restructure sentences instead of only replacing words.
-- Combine or split sentences where appropriate.
+3. Embrace Human Flow & Imperfection:
+- Use active voice predominantly, but occasionally use passive voice where it feels natural.
+- Start sentences with conjunctions occasionally (e.g., "But," "And," "Because," "That said,").
+- Vary paragraph lengths. Avoid perfect symmetry (e.g., have one paragraph be 5 sentences, and the next be just 1 or 2).
 
-4. Natural flow:
-- Use smooth transitions between sentences.
-- Avoid repetitive sentence structures.
+4. Preserve Meaning & Constraints:
+- Do NOT change facts, technical terms, model names, or key concepts. Do not introduce new information.
+- Maintain roughly the same word count as the original text.
+- Preserve the original formatting (do not add lists or bullet points unless they exist in the source).
+- Output ONLY the rewritten content. Do not include any introductory phrases, explanations, or meta-commentary.
 
-5. Human-like tone:
-- Use clear, conversational but professional language.
-- Avoid unnecessary jargon unless required.
-
-6. Output constraints:
-- Maintain approximately the same length as the original text.
-- Do not add bullet points unless present in input.
-- Do not explain your changes.
-- Output only the rewritten content.
-
-Context:
+Original Text:
 {context}
 """
 
